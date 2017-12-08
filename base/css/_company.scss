@@ -1,0 +1,381 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 220px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+
+-------------------------------- */
+
+.p-company{
+	@include w_auto2;
+	margin-bottom: 32px;
+
+	.mod_colitem{
+	padding: 16px;
+	}
+
+	h2{
+		@include font-size(12);
+		padding: 8px;
+		color: #4A4A4A;
+		border-bottom: 1px solid #ccc;
+		font-weight: 200;
+	}
+	p{
+		@include font-size(9);
+		padding: 8px;
+		&.caps{
+			border: 1px solid #ddd;
+
+			@include font-size(8);
+		}
+	}
+	.comp-img{
+		padding: 8px;
+	}
+}
+
+.p-message{
+	width: 100%;
+	@include mq(xsmall){
+		background: #fff;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		background: #fff url(../img/int.jpg) no-repeat center top;
+		background-size: cover;
+	}
+	@include mq(large){
+		background: #fff url(../img/int.jpg) no-repeat center top;
+		background-size: cover;
+	}
+	@include mq(xlarge){
+	}
+
+	.wrap{
+
+		padding: 16px;
+
+		@include mq(xsmall){
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			margin-right: 350px;
+			background: #fff;
+		}
+		@include mq(large){
+			margin-right: 450px;
+			background: #fff;
+		}
+		@include mq(xlarge){
+			@include w_auto2;
+			background: none;
+			padding-right: 500px;
+		}
+
+	}
+	h2{
+		position: relative;
+		top:-36px;
+		padding-left: 24px;
+
+		color: $blue;
+		@include itc;
+		@include font-size(24);
+		line-height: 1.1;
+		span{
+			@include font;
+			@include font-size(12);
+			display: block;
+			font-weight: 400;
+		}
+	}
+
+	.topimg{
+
+		@include mq(xsmall){
+			position: relative;
+			top: -12px;
+			text-align: center;
+			img{
+				//border-radius: 50%;
+			}
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			display: none;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+	}
+	h3{
+		color: $blue;
+		@include font-size(11);
+		font-weight: 400;
+		padding: 0 8px;
+	}
+	p{
+		padding: 16px 8px;
+		@include font-size(9);
+		margin-bottom: 20px;
+		font-weight: 200;
+	}
+
+}
+
+.ggmap {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+
+.ggmap iframe,
+.ggmap object,
+.ggmap embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+
+.p-company-detail{
+	@include w_auto2;
+	padding: 64px 16px 0px;
+	@include font-size(10);
+	&.-history{
+		margin-bottom: 32px;
+	}
+	&.-access{
+		h2{
+			margin-bottom: 16px;
+		}
+		p{
+			padding: 16px;
+			@include font-size(8);
+		}
+		h3{
+			@include font-size(12);
+			padding: 16px;
+			color: #4A4A4A;
+			border-bottom: 1px solid #ccc;
+			font-weight: 200;
+
+		}
+	}
+	h2{
+		@include font-size(12);
+		padding: 8px;
+		color: #4A4A4A;
+		border-bottom: 1px solid #ccc;
+		font-weight: 200;
+	}
+
+	table{
+		border: 1px solid #ddd;
+		background: #fff;
+		width: 100%;
+		border-collapse: collapse;
+		th,td{
+			padding: 8px;
+			border: 1px solid #ddd;
+			font-weight: 200;
+			@include font-size(8);
+		}
+		th{
+			@include mq(xsmall){
+				display: block;
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: table-cell;
+				width: 30%;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+
+		}
+		td{
+			@include mq(xsmall){
+				display: block;
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: table-cell;
+				width: 70%;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+
+		}
+	}
+}
+
+
+.p-recruit{
+	@include w_auto2;
+	padding: 32px 16px 32px;
+	@include font-size(10);
+	.read{
+		text-align: center;
+		padding-bottom: 16px;
+	}
+	.banner{
+		display: block;
+		background:#fff;
+		border: 2px solid $green;
+		padding: 16px;
+		color:  $green;
+		margin-bottom: 32px;
+		text-align: center;
+	}
+	h2{
+		@include font-size(12);
+		padding: 8px;
+		color: #4A4A4A;
+		border-bottom: 1px solid #ccc;
+		font-weight: 200;
+		margin-bottom: 8px;
+	}
+
+	table{
+		border-collapse: collapse;
+		background: white;
+		margin-bottom: 32px;
+		width: 100%;
+		th,td{
+			border: 1px solid #ddd;
+			padding: 8px;
+			@include font-size(8);
+			@include mq(xsmall){
+				display: block;
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: table-cell;
+				width: auto;
+			}
+		}
+		th{
+
+			@include mq(xsmall){
+				display: block;
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: table-cell;
+				width: 150px;
+			}
+		}
+		td{
+
+			.mod_colitem{
+				border: 1px solid #ccc;
+
+				p{
+					@include font-size(7);
+				}
+			}
+
+			h4{
+				padding: 8px;
+				@include font-size(7);
+				border-bottom: 1px solid #ddd;
+				background: #ddd;
+			}
+			h5{
+				padding: 4px 8px;
+				border-bottom: 1px dotted #ddd;
+				@include font-size(8);
+			}
+			p{
+				padding: 4px 8px;
+				@include font-size(8);
+			}
+			.kome{@include font-size(6);}
+
+
+
+		}
+	}
+	.kome{@include font-size(6);}
+}
+
+.recruit_link{
+	margin-bottom: 32px;
+	@include flex;
+	li{
+		width: 50%;
+		padding: 1%;
+
+		a{
+			display: block;
+			padding: 8px 16px;
+			border-left: 2px solid $green;
+			color: $green;
+			@include box-shadow(0,1px,8px,1px,rgba(0,0,0,.2));
+			background: #fff;
+			h3{
+				@include font-size(9);
+			}
+			p{
+				@include font-size(7);
+			}
+		}
+	}
+}
+
+.contract{
+
+	h3{
+		color: $green;
+		@include font-size(9);
+
+
+	}
+}

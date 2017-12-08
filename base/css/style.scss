@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* --------------------------------
+
+Site Name: [  ]
+Site URI: [  ]
+Description: [ ]
+Version: [ 1.0 ]
+Author: gramglan
+Author URI: gramglan.work
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+
+-------------------------------- */
+/* font-family @include font;*/
+@import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+@mixin font{
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+
+@font-face {
+  font-family: "itc";
+  src:
+       url("../font/ITC Avant Garde Gothic LT Bold.woff2") format('woff2'),
+       url("../font/ITC Avant Garde Gothic LT Bold.woff") format('woff'),
+       url("../font/ITC Avant Garde Gothic LT Bold.otf")  format('opentype');
+}
+@mixin itc {
+  font-family: "itc";
+	letter-spacing: .5px;
+}
+
+@font-face {
+  font-family: 'Chalkduster';
+    src:
+			    url('../font/Chalkduster.ttf.svg#Chalkduster') format('svg'),
+			    url('../font/Chalkduster.ttf.eot'),
+			    url('../font/Chalkduster.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin chalkduster {
+  font-family: 'Chalkduster';
+}
+
+/* SITE COLOR */
+$key: #EA4D00;
+$red: #E83828;
+$green: #6FBA2C;
+$blue: #00A0E9;
+$yellow: #FFE200;
+$gray: #9B9B9B;
+
+
+/* mixin
+mixinの編集
+・汎用的に編集する箇所は_mixin.scssに記載
+　他にはminin/_common.scssないのhover処理など。
+・フォントサイズはpxの他にremを自動指定
+・他サイト単位で追加する場合は_common.scssに追記もしくはmixin用の@importを追加
+*/
+@import "mixin";
+@import 'mixin/core';
+@import 'mixin/animate';
+@import 'mixin/autoheight';
+@import 'mixin/lazyload';
+@import 'mixin/video';
+
+/* 基本設定 */
+@import "common";
+
+/* レイアウト設定 */
+@import "header";
+@import "footer";
+
+/* 各ページ */
+@import "top";
+@import "side";
+@import "parts";
+@import "company";
+@import "shop";

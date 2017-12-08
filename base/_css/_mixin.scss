@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 220px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+
+
+-------------------------------- */
+/* SETTING */
+$min-w:1000px;
+$max-w:1400px;
+$smp-w:100%;
+
+/* SNS COLOR */
+$twitter:#00aced;
+$facebook:#305097;
+$line:#5ae628;
+
+
+
+/* width設定 */
+@mixin w_auto{
+	margin:0 auto;
+	@include mq(xsmall){
+		width: $smp-w;
+	}
+	@include mq(small){
+		width: $smp-w;
+	}
+	@include mq(medium){
+		width: $smp-w;
+	}
+	@include mq(large){
+		max-width: $min-w;
+	}
+	@include mq(xlarge){
+		max-width: $max-w;
+	}
+}
+
+@mixin w_auto2{
+	margin:0 auto;
+	@include mq(xsmall){
+		width: $smp-w;
+	}
+	@include mq(small){
+		width: $smp-w;
+	}
+	@include mq(medium){
+		width: $smp-w;
+	}
+	@include mq(large){
+		max-width: $min-w;
+	}
+	@include mq(xlarge){
+		max-width: $min-w;
+	}
+}
+
+
+@mixin flex{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	/*@include max-screen($breakpoint-mobile) {display: block;}*/
+}
+
+@mixin flexnone{
+    display: block;
+}
+
+/* mixin */
+@import "mixin/_common.scss";
+@import "mixin/_browser.scss";
+@import "mixin/_clear.scss";
+@import "mixin/_font.scss";
+@import "mixin/_mediaquery.scss";
+@import "mixin/_radius.scss";

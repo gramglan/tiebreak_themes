@@ -1,0 +1,942 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 220px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+-------------------------------- */
+.-pd8{
+	display: block;
+	padding: 8px;
+
+}
+a.-pd8{
+	@include hover;
+}
+
+.-mb24{
+	margin-bottom: 24px;
+}
+
+.-center{
+	display: block;
+	text-align: center;
+}
+a{
+	.-bk{
+		color: #222;
+	}
+
+}
+
+/*
+メインコンテンツのラップ
+ */
+#contents{
+	@include mq(xsmall){
+		padding-top:66px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+
+	}
+	@include mq(large){
+		padding-top: 135px;
+	}
+	@include mq(xlarge){
+	}
+}
+
+
+//base layout
+#box{
+	@include flex;
+	@include w_auto2;
+	@include mq(xsmall){
+		padding:24px;
+		width: 100%;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		padding:32px 0;
+	}
+	@include mq(xlarge){
+	}
+	.main{
+		@include mq(xsmall){
+			width: 100%;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			width: 680px;
+			padding-right: 24px;
+		}
+		@include mq(xlarge){
+		}
+	}
+
+	.side{
+		@include mq(xsmall){
+			width: 100%;
+			padding-top: 24px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			width: 320px;
+			padding-top: 0;
+			padding-left: 24px;
+		}
+		@include mq(xlarge){
+		}
+	}
+
+	&.-fullwidth{
+		.main{
+			@include mq(xsmall){
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+		}
+
+		.side{
+			@include mq(xsmall){
+				width: 100%;
+				padding-top: 24px;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+		}
+	}
+
+}
+
+/*
+	flex
+*/
+.mod_flex{
+	@include flex;
+	&.-rev{
+		@include mq(xsmall){
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+			flex-flow: row-reverse;
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+	}
+	&.-col2{
+		.mod_colitem{
+			width: 100%;
+			@include mq(xsmall){
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 50%;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+			&.mod-contents-block-wrap{
+				width: 100%;
+				@include mq(xsmall){
+				}
+				@include mq(small){
+				}
+				@include mq(medium){
+					width: 48%;
+					margin: 1%;
+				}
+				@include mq(large){
+				}
+				@include mq(xlarge){
+				}
+			}
+		}
+	}
+	&.-col3{
+		@include w_auto2;
+		.mod_colitem{
+			width: 100%;
+			@include mq(xsmall){
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				width: 30%;
+				margin: 1%;
+				&:first-child{
+					margin-left: 3%
+				}
+				&:last-child{
+					margin-right: 3%
+				}
+
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+		}
+	}
+}
+
+
+/*
+pagetitle
+ */
+
+.mod-page-title{
+	width: 100%;
+	@include mq(xsmall){
+		text-align: center;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+
+	}
+	@include mq(xlarge){
+		text-align: left;
+	}
+
+	h1,.h1{
+		@include w_auto2;
+
+		color: #fff;
+		line-height: 1;
+		@include mq(xsmall){
+			padding: 32px 16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			padding: 64px 16px;
+		}
+		@include mq(xlarge){
+		}
+		strong{
+			@include itc;
+
+			display: block;
+			margin-bottom: 8px;
+			@include mq(xsmall){
+				@include font-size(16);
+				line-height: 1.5;
+				text-align: left;
+			}
+			@include mq(large){
+				@include font-size(24);
+				text-align: center;
+			}
+		}
+		span{display: block;
+			//@include font-size(12);
+			font-weight: 200;
+			padding-bottom: 4px;
+			@include mq(xsmall){
+				@include font-size(10);
+				line-height: 1.5;
+				text-align: left;
+			}
+			@include mq(large){
+				@include font-size(12);
+				text-align: center;
+			}
+		}
+
+		&.-min{
+			@include mq(xsmall){
+				padding:16px;
+				opacity: .8;
+				strong{
+					display: inline-block;
+				}
+				span{
+					display: inline-block;
+				}
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				padding: 16px;
+			}
+			@include mq(xlarge){
+			}
+		}
+
+
+	}
+
+	&.-company{
+		background: $blue;
+	}
+	&.-shop{
+		background: $red;
+	}
+	&.-holiday{
+		background: $red;
+	}
+	&.-growup{
+		background: $green;
+	}
+	&.-recruit{
+		background: $green;
+	}
+	&.-contact{
+		background: $gray;
+	}
+	&.-news{
+		background: $gray;
+	}
+	&.-service{
+		background: $yellow;
+		h1,.h1{
+			color: #222;
+		}
+	}
+	&.-common{
+		background: $gray;
+	}
+
+}
+
+
+.mod-diary-detail{
+	@include w_auto2;
+	margin-bottom: 32px;
+	.images{
+
+	}
+	h1{
+		@include font-size(15);
+
+		padding: 16px;
+		padding-bottom: 8px;
+		@include mq(xsmall){
+			text-align: left;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			text-align: center;
+		}
+		@include mq(xlarge){
+		}
+	}
+	time{
+		display: block;
+		text-align: center;
+		@include font-size(9);
+		padding-top: 16px;
+	}
+
+	.retuen{
+		text-align: center;
+		padding: 16px;
+		a{
+			display: inline-block;
+			background: #fff;
+			border: 1px solid #ddd;
+			padding: 8px 30px;
+			color: #444;
+			@include font-size(9);
+			border-radius: 30px;
+		}
+	}
+}
+
+.retuen{
+	text-align: center;
+	padding: 16px;
+	a{
+		display: inline-block;
+		background: #fff;
+		border: 1px solid #ddd;
+		padding: 8px 30px;
+		color: #444;
+		@include font-size(9);
+		border-radius: 30px;
+	}
+}
+
+.mod-single-contents{
+	@include mq(xsmall){
+		padding: 16px;
+		background: #fff;
+		border: 1px solid #ddd;
+		margin: 8px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		padding: 16px;
+	}
+	@include mq(large){
+		padding: 24px;
+	}
+	@include mq(xlarge){
+	}
+	@include font-size(9);
+	h2{
+		border-bottom: 1px solid $key;
+		color: $key;
+		@include font-size(13);
+		margin-bottom: 8px;
+		padding: 16px;
+	}
+	h3{
+		border-bottom: 1px dashed $key;
+		font-weight: 100;
+		color: $key;
+		@include font-size(12);
+		margin-bottom: 8px;
+		padding: 16px;
+	}
+
+	h4{
+		border-bottom: 1px dashed $key;
+		font-weight: 100;
+		color: $key;
+		@include font-size(11);
+		margin-bottom: 8px;
+		padding: 16px;
+	}
+
+	p{
+		padding: 8px;
+		@include clear;
+	}
+	a{
+		color: $key;
+		text-decoration: underline;;
+	}
+
+	.link{
+		background: $key;
+		border-radius: 60px;
+		padding: 8px 16px;
+		display: block;
+		margin: 8px;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		@include hover;
+	}
+
+	table{
+		width: 100%;
+		border-collapse: collapse;
+		th,td{
+			border: 1px solid #ddd;
+			padding: 8px;
+			@include mq(xsmall){
+				display: block;
+				width: 100%;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: table-cell;
+				width: auto;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+
+		}
+		th{
+
+
+			@include mq(xsmall){
+				display: block;
+				width: 100%;
+				text-align: left;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+				display: table-cell;
+				text-align: right;
+				width: 200px;
+			}
+			@include mq(large){
+			}
+			@include mq(xlarge){
+			}
+		}
+		td{
+			text-align: left;
+
+			input[type="text"],textarea{
+				border: 1px solid #ddd;
+			}
+		}
+	}
+
+	ul{
+		li{
+			list-style: circle;
+			margin-left: 2em;
+		}
+	}
+	ol{
+		li{
+			list-style: decimal;
+			margin-left: 2em;
+		}
+	}
+	.must{
+		display: inline-block;
+		background: $red;
+		padding: 2px 4px;
+		color: #fff;
+		margin: 4px;
+		@include font-size(7);
+		float: left;
+	}
+	input[type="text"]{
+		width: 100%;
+		padding: 8px;
+	}
+
+	input[type="email"]{
+		width: 100%;
+		padding: 8px;
+	}
+	input[type="tel"]{
+		width: 100%;
+		padding: 8px;
+	}
+	textarea{
+		width: 100%;
+		padding: 8px;
+	}
+	input[type="radio"]{
+		margin-right: 8px;
+		margin-left: 16px;
+	}
+	input[type="submit"]{
+
+		width: 50%;
+		border: none;
+		background: $yellow;
+		padding: 16px;
+		color: #222;
+		font-size: 18px;
+		font-weight: bold;
+		margin: 0 auto;
+		margin-top: 16px;
+		display: block;
+		cursor: pointer;
+		@include hover;
+		-webkit-appearance: none;
+		border-radius: 4px;
+	}
+}
+
+
+.mod-diary-list{
+	@include w_auto2;
+	.read{
+		background: #fff;
+		@include box-shadow(0,1px,8px,1px,rgba(0,0,0,.2));
+		position: relative;
+
+		padding:16px;
+		@include font-size(9);
+
+		@include mq(xsmall){
+			top: 0px;
+			margin-bottom: 16px;
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+			top: -20px;
+			margin-bottom:0;
+		}
+		@include mq(xlarge){
+		}
+
+		&.-holiday{
+			color:  $red;
+		}
+		&.-growup{
+			color:  $green;
+		}
+		&.-news{
+			color:  $gray;
+		}
+	}
+
+}
+
+.mod-list{
+
+	li{
+		 padding: 16px;
+		 margin-bottom: 16px;
+		 @include clear;
+		 background: #fff;
+		 @include box-shadow(0,1px,8px,1px,rgba(0,0,0,.2));
+		 a{
+			 @include hover;
+			 cursor: pointer;
+			 display: block;
+
+		 }
+		 img{
+			 width: 150px;
+			 height: auto;
+			 float: left;
+			 margin-right: 16px;
+		 }
+		 time{
+			  @include font-size(9);
+				display: inline-block;
+				border-radius: 30px;
+				color: #999;
+		 }
+		 h2{
+			 @include font-size(10);
+			 color: #333;
+		 }
+
+
+	}
+
+	&.-holiday{
+
+		h2{
+			//color: $red;
+		}
+	}
+
+}
+
+.pageinfo{
+	border-top: 1px solid #ddd;
+	padding: 16px;
+	h3{
+		@include font-size(10);
+		padding-bottom: 8px;
+	}
+	p{
+		@include font-size(8);
+		font-weight: 200;
+	}
+}
+
+.mod_pagenation{
+	padding: 16px 0;
+	ol{
+		text-align: center;
+		li{
+			display: inline-block;
+			margin: 4px;
+			border: 1px solid #ddd;
+
+			@include font-size(8);
+			&.active{
+				border: 1px solid #333;
+				span{
+					display: block;
+					padding: 8px 12px;
+					color: #333;
+				}
+			}
+			&.next{
+
+			}
+			&.prev{
+
+			}
+			a{
+				display: block;
+				padding: 8px 12px;
+				@include hover;
+				color: #222;
+			}
+		}
+	}
+}
+
+
+.service-contants{
+	@include w_auto2;
+	padding: 24px;
+	.mod_flex{
+		margin-bottom: 24px;
+	}
+	.service-title{
+		@include font-size(11);
+		color: #444;
+		font-weight: 200;
+		padding: 8px;
+		border-bottom: 1px solid #999;
+	}
+
+	.service-detail{
+		@include font-size(9);
+		color: #444;
+		font-weight: 200;
+		padding: 8px;
+	}
+
+	.service-img{
+		padding: 0 16px;
+	}
+	.service-box{
+		padding: 0 16px;
+	}
+
+}
+
+.service-products-w{
+	padding: 16px;
+	margin: 8px;
+	background: #fff;
+	border: 1px solid #ddd;
+	h3{
+		@include font-size(10);
+		padding-bottom: 8px;
+		color: #444;
+		font-weight: 400;
+		border-bottom: 1px solid #999;
+		text-align: center;
+
+	}
+	p{
+		@include font-size(8);
+		color: #444;
+		font-weight: 200;
+		padding: 8px;
+	}
+}
+
+.otherlink{
+	@include font-size(9);
+	padding: 16px;
+	color: #444;
+	border-top: 1px solid #ddd;
+	text-align: right;
+}
+
+/*
+ fixed headerを使用した場合のアンカー位置用のstyle
+	<a class="ancker" id="アンカーID"></a>
+ */
+.ancker{
+	display: block;
+	@include mq(xsmall){
+		margin-top: -70px;
+		padding-top: 70px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+		margin-top: -150px;
+		padding-top: 150px;
+	}
+	@include mq(large){
+	}
+	@include mq(xlarge){
+	}
+}
+
+.entry-btn-wrap{
+	text-align: center;
+	padding-bottom: 16px;
+	&.ttt{
+		position: relative;
+		@include mq(xsmall){
+			top: -16px;
+		}
+		@include mq(medium){
+			top: -20px;
+		}
+	}
+	.entry-btn{
+		&.white{
+			border: 2px solid #fff;
+			color: #fff;
+			padding: 8px 16px;
+			@include font-size(12);
+		}
+		border: 2px solid $green;
+		background: $green;
+		color: #fff;
+		padding: 8px 16px;
+		@include font-size(20);
+	}
+}
+
+
+
+.p-common{
+	@include w_auto2;
+	margin: 24px auto;
+	@include box-shadow(0,1px,8px,1px,rgba(0,0,0,.2));
+	background: #fff;
+	@include font-size(8);
+	padding: 16px;
+
+	h2{
+		padding: 8px;
+		@include font-size(9);
+		border-bottom: 1px solid $gray;
+	}
+	p{
+		padding: 8px;
+	}
+}
+.mod-recruit-list-item{
+	a.btn-movie{
+		position: absolute;
+		right: 8px;
+		top: 60px;
+		display: inline-block;
+		border: 1px solid $red;
+		color: white;
+		padding: 8px 16px;
+		z-index: 500;
+		outline: none;
+		background: $red;
+		text-align: center;
+		@include mq(medium){
+			width: 20%;
+		}
+	}
+	a.btn-entry{
+
+		border: 1px solid $green;
+		z-index: 500;
+		outline: none;
+		text-align: center;
+		@include mq(xsmall){
+			background: $green;
+			color: #fff;
+			position: static;
+			display: block;
+			text-align: right;
+			padding: 16px;
+		}
+		@include mq(medium){
+			background: $green;
+			position: absolute;
+			text-align: center;
+			right: 8px;
+			top: 8px;
+			color: white;
+			padding: 8px 16px;
+			display: inline-block;
+			width: 20%;
+
+		}
+	}
+}
+
+.youtube-wrap{
+	background: #000;
+
+
+	@include mq(xsmall){
+		padding: 0px;
+		margin-bottom: 16px;
+	}
+	@include mq(medium){
+		padding: 0 100px;
+		margin-bottom: 24px;
+	}
+	.youtube{
+		position: relative;
+	  width: 100%;
+	  padding-top: 56.25%;
+		iframe {
+			  position: absolute;
+			  top: 0;
+			  right: 0;
+			  width: 100% !important;
+			  height: 100% !important;
+			}
+	}
+}
+
+.holiday-system{
+	margin: 16px 8px;
+	padding: 16px;
+	background: #fff;
+	border: 1px solid $red;
+	h3{
+		color:  $red;
+		@include font-size(10);
+	}
+	p{
+		color:  $red;
+		@include font-size(8);
+	}
+}

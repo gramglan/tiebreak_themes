@@ -1,0 +1,424 @@
+@charset "UTF-8";
+/* --------------------------------
+MIXIN
+- gramglan
+
+//メディアクエリ設定
+標準はmedium
+@include mq {}
+
+//モバイル端末ー縦向き
+'xsmall': 320px,
+//モバイル端末ー横向き
+'small' : 600px,
+//タブレット端末ー縦向き
+'medium': 768px,
+//タブレット端末ー横向き＆PCサイズ
+'large' : 1024px,
+//1280px以上
+'xlarge': 1280px,
+
+@include mq(xsmall){
+}
+@include mq(small){
+}
+@include mq(medium){
+}
+@include mq(large){
+}
+@include mq(xlarge){
+}
+
+-------------------------------- */
+.mod-head-line{
+	width: 100%;
+	height: 3px;
+	position: fixed;
+
+	top: 0;
+	left: 0;
+	@include mq(xsmall){
+		z-index: 400;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		z-index: 400;
+	}
+	@include mq(xlarge){
+	}
+}
+
+
+.recommend_banner{
+	@include mq(xsmall){
+		display: none;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		display: block;
+		height: 135px;
+		background: #fff;
+		position: fixed;
+		right: 0px;
+		top: 0px;
+		z-index: 300;
+	}
+	@include mq(xlarge){
+	}
+	a{
+		display: block;
+		padding:10px 7px 4px 7px;
+		@include hover;
+
+		z-index: 200;
+		width: 300px;
+
+
+
+	}
+	img{
+		//border: 2px solid #fff;
+		//border-left: 6px solid #fff;
+	}
+}
+
+
+#header{
+
+
+	position: fixed;
+
+	@include mq(xsmall){
+		z-index: 269;
+		background: none;
+		margin-right: 70px;
+		height: 70px;
+		top: 0;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		z-index: 199;
+		background: #fff;
+		padding-right: 300px;
+		top: 0;
+		width: 100%;
+	}
+	@include mq(xlarge){
+	}
+	.head_wrap{
+		.h1{
+
+			a{
+				display: block;
+				padding: 8px;
+				padding-left: 24px;
+				line-height: 1;
+			}
+			@include mq(xsmall){
+				flex: none;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				float: left;
+			}
+			@include mq(xlarge){
+			}
+		}
+		div.h1{
+			padding-top: 9px;
+		}
+
+
+		.read{
+			float: left;
+			@include font-size(6) ;
+			padding-top:20px;
+			padding-left: 8px;
+			@include mq(xsmall){
+				display: none;
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				display: block;
+			}
+			@include mq(xlarge){
+			}
+
+		}
+	}
+
+}
+
+
+#nav{
+	height: 65px;
+	background: url(../img/bg.png) repeat;
+
+	@include box-shadow(0,5px,8px,1px,rgba(0,0,0,.2));
+	//border: 4px solid #fff;
+	position: fixed;
+	width: 100%;
+	@include mq(xsmall){
+		z-index: 220;
+		top: 0px;
+		left: 0;
+
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+
+	}
+	@include mq(large){
+		top: 70px;
+		left: 0;
+	}
+	@include mq(xlarge){
+	}
+
+	.frame{
+
+	}
+}
+
+ul.modal-content{
+
+	@include mq(xsmall){
+		display: none;
+		transition: opacity 1s;
+		position: fixed;
+		top: 65px;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		opacity: 0;
+		&.open{
+			display: block;
+			opacity: 1;
+			//@include box-shadow;
+			background:#fff;
+
+			li{
+				border-bottom: 1px solid #ddd;
+			}
+		}
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		opacity: 1;
+		display: block;
+		height: auto;
+		width: auto;
+		@include flex;
+		@include w_auto;
+		position: static;
+		top: 0;
+		padding-left: 24px;
+	}
+	@include mq(xlarge){
+	}
+
+	li{
+		//@include flex;
+		//justify-content: center;
+		//align-items: center;
+
+		@include mq(large){
+			flex: 1 0 auto;
+		}
+		a{
+			display: block;
+			text-align: left;
+			color: #999999;
+			@include hover;
+			@include mq(xsmall){
+				padding: 16px 0;
+				@include font-size(9);
+			}
+			@include mq(small){
+			}
+			@include mq(medium){
+			}
+			@include mq(large){
+				padding: 16px 0;
+				@include font-size(9);
+
+			}
+			@include mq(xlarge){
+			}
+
+			strong{
+				display: block;
+				line-height: 1;
+				color: #222;
+				padding-left: 8px;
+
+			}
+			span{
+				display: block;
+				padding-top: 6px;
+				padding-left: 8px;
+				@include itc;
+				line-height: 1;
+				@include font-size(6);
+			}
+		}
+	}
+}
+
+.left-line{
+	border-left-width: 2px;
+	border-left-style: solid;
+	border-left-color: $gray;
+	@include mq(xsmall){
+		margin-left: 20px;
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+
+	}
+	@include mq(large){
+		margin-left: 0px;
+	}
+	@include mq(xlarge){
+	}
+
+	&.-red{
+		border-left-color: $red;
+	}
+	&.-blue{
+		border-left-color: $blue;
+	}
+	&.-green{
+		border-left-color: $green;
+	}
+	&.-yellow{
+		border-left-color: $yellow;
+	}
+}
+
+.font-color{
+	&.-red{
+		color: $red;
+	}
+	&.-blue{
+		color: $blue;
+	}
+	&.-green{
+		color: $green;
+	}
+	&.-yellow{
+		color: $yellow;
+	}
+}
+
+/* transition */
+#nav
+{
+	padding-right: 300px;
+
+
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+
+		@include mq(xsmall){
+		}
+		@include mq(small){
+		}
+		@include mq(medium){
+		}
+		@include mq(large){
+		}
+		@include mq(xlarge){
+		}
+
+}
+
+
+
+/*============================
+#SPmenu
+============================*/
+.smp_menu {
+	@include mq(xsmall){
+		width: 50px;
+		height: 50px;
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		z-index: 2000;
+
+	}
+	@include mq(small){
+	}
+	@include mq(medium){
+	}
+	@include mq(large){
+		display: none;
+	}
+	@include mq(xlarge){
+	}
+
+	.menu-trigger {
+		display:block;
+		transition: all .4s;
+		box-sizing: border-box;
+	  background:none;
+		padding: 10px;
+		position: relative;
+		width: 50px;
+		height: 50px;
+	  span {
+			display: inline-block;
+			transition: all .4s;
+			box-sizing: border-box;
+			}
+		  &.active {background: none;
+		  }
+	  span {
+			position: absolute;
+			left: 10px;
+			width: 30px;
+			height: 3px;
+			background-color: $key;
+			border-radius: 4px;
+	    &:nth-of-type(1) {top: 11px;}
+	    &:nth-of-type(2) {top: 24px;}
+	    &:nth-of-type(3) {bottom: 11px;}
+	  }
+	  &.active span {
+	    &:nth-of-type(1) {
+	      -webkit-transform: translateY(13px) rotate(-45deg);
+	      transform: translateY(13px) rotate(-45deg);
+	    }
+	    &:nth-of-type(2) {
+	      opacity: 0;
+	    }
+	    &:nth-of-type(3) {
+	      -webkit-transform: translateY(-12px) rotate(45deg);
+	      transform: translateY(-12px) rotate(45deg);
+	    }
+	  }
+	}
+}
